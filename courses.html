@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses | RFree Academy</title>
+    <meta
+      name="description"
+      content="Browse the RFree Academy course catalog, review progress, and open any course in the studio."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Sora:wght@500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="courses">
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html" aria-label="RFree Academy home">
+          <span class="brand-mark">R</span>
+          <span class="brand-copy">
+            <strong>RFree</strong>
+            <span>Academy</span>
+          </span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+          <a href="index.html" data-page-link="home">Home</a>
+          <a href="programs.html" data-page-link="programs">Programs</a>
+          <a href="courses.html" data-page-link="courses">Courses</a>
+          <a href="studio.html" data-page-link="studio">Studio</a>
+          <a href="impact.html" data-page-link="impact">Impact</a>
+          <a href="funding.html" data-page-link="funding">Funding</a>
+          <a href="teach.html" data-page-link="teach">Teach</a>
+          <a href="studio.html" class="nav-cta">Open Studio</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="section reveal page-hero">
+          <div class="section-heading">
+            <p class="eyebrow">Course Catalog</p>
+            <h1 class="page-title">Browse courses and pick the next one to open.</h1>
+            <p>
+              This page is for scanning the catalog. Each course shows its module progress, topic tags,
+              and a direct link into the editing studio.
+            </p>
+          </div>
+          <div class="page-actions">
+            <a class="button button-primary" href="studio.html">Go to Studio</a>
+            <a class="button button-secondary" href="programs.html">View Programs</a>
+          </div>
+        </section>
+
+        <section class="section reveal">
+          <div class="course-toolbar">
+            <p class="course-hint">
+              Open any course in the studio to update content, check modules off, or revise the lesson video and transcript.
+            </p>
+          </div>
+
+          <div class="course-grid" id="course-grid"></div>
+          <noscript>
+            <p class="noscript-note">
+              JavaScript is needed to load the interactive course catalog on this page.
+            </p>
+          </noscript>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div>
+          <strong>RFree Academy</strong>
+          <p>Free learning for real-world impact.</p>
+        </div>
+        <p>Built for access, dignity, and community-led opportunity.</p>
+        <p>&copy; <span id="year"></span> RFree Academy</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

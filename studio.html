@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio | RFree Academy</title>
+    <meta
+      name="description"
+      content="Edit RFree Academy courses in the studio, including modules, video, transcripts, and learner progress."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Sora:wght@500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="studio">
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html" aria-label="RFree Academy home">
+          <span class="brand-mark">R</span>
+          <span class="brand-copy">
+            <strong>RFree</strong>
+            <span>Academy</span>
+          </span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+          <a href="index.html" data-page-link="home">Home</a>
+          <a href="programs.html" data-page-link="programs">Programs</a>
+          <a href="courses.html" data-page-link="courses">Courses</a>
+          <a href="studio.html" data-page-link="studio">Studio</a>
+          <a href="impact.html" data-page-link="impact">Impact</a>
+          <a href="funding.html" data-page-link="funding">Funding</a>
+          <a href="teach.html" data-page-link="teach">Teach</a>
+          <a href="courses.html" class="nav-cta">Back to Courses</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="section reveal page-hero">
+          <div class="section-heading">
+            <p class="eyebrow">Course Studio</p>
+            <h1 class="page-title">Edit the course in one focused workspace.</h1>
+            <p>
+              Update the title, teacher, summary, video, transcript, modules, and saved progress
+              without leaving the page.
+            </p>
+          </div>
+          <div class="page-actions">
+            <a class="button button-primary" href="courses.html">Back to Courses</a>
+            <a class="button button-secondary" href="teach.html">Teacher Info</a>
+          </div>
+        </section>
+
+        <section class="section reveal">
+          <div class="studio-layout studio-layout-app">
+            <aside class="publish-card studio-form-card studio-sidebar">
+              <div class="studio-bar">
+                <div>
+                  <p class="studio-label">Studio mode</p>
+                  <h3 id="studio-mode">Course editor</h3>
+                </div>
+                <button class="button button-secondary studio-reset" id="new-course-button" type="button">
+                  New course
+                </button>
+              </div>
+
+              <p class="publish-note">
+                Choose a saved course, or start a new one and build it here.
+              </p>
+
+              <p class="autosave-status" id="autosave-status" aria-live="polite">
+                Autosave is on. Changes save in this browser while you type.
+              </p>
+
+              <div class="studio-course-list" id="studio-course-list"></div>
+
+              <ul class="detail-list">
+                <li>Add or change the video lesson</li>
+                <li>Write or paste the transcript</li>
+                <li>List the modules in order</li>
+                <li>Track module completion with saved progress</li>
+              </ul>
+
+              <p class="publish-feedback" id="publish-feedback" aria-live="polite"></p>
+            </aside>
+
+            <div class="studio-workspace">
+              <article class="publish-card studio-form-card">
+                <h3>Course details</h3>
+                <form class="publish-form" id="publish-form">
+                  <div class="field-group">
+                    <label for="course-title">Course title</label>
+                    <input id="course-title" name="courseTitle" type="text" required />
+                  </div>
+
+                  <div class="field-row">
+                    <div class="field-group">
+                      <label for="instructor-name">Instructor or publisher</label>
+                      <input id="instructor-name" name="instructorName" type="text" required />
+                    </div>
+
+                    <div class="field-group">
+                      <label for="course-type">Course type</label>
+                      <select id="course-type" name="courseType" required>
+                        <option value="Core Track">Core Track</option>
+                        <option value="Community Elective">Community Elective</option>
+                        <option value="Workshop Series">Workshop Series</option>
+                        <option value="Mentorship Series">Mentorship Series</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="field-row">
+                    <div class="field-group">
+                      <label for="course-status">Publishing status</label>
+                      <select id="course-status" name="courseStatus" required>
+                        <option value="Draft">Draft</option>
+                        <option value="Ready to teach">Ready to teach</option>
+                        <option value="Open for contributors">Open for contributors</option>
+                        <option value="Needs instructor">Needs instructor</option>
+                        <option value="Published now">Published now</option>
+                      </select>
+                    </div>
+
+                    <div class="field-group">
+                      <label for="course-duration">Duration</label>
+                      <input id="course-duration" name="courseDuration" type="text" required />
+                    </div>
+                  </div>
+
+                  <div class="field-row">
+                    <div class="field-group">
+                      <label for="course-level">Audience level</label>
+                      <select id="course-level" name="courseLevel" required>
+                        <option value="Beginner">Beginner</option>
+                        <option value="All levels">All levels</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Mixed level">Mixed level</option>
+                      </select>
+                    </div>
+
+                    <div class="field-group">
+                      <label for="course-format">Learning format</label>
+                      <input id="course-format" name="courseFormat" type="text" required />
+                    </div>
+                  </div>
+
+                  <div class="field-group">
+                    <label for="course-tags">Topics or tags</label>
+                    <input id="course-tags" name="courseTags" type="text" required />
+                  </div>
+
+                  <div class="field-group">
+                    <label for="course-summary">Course summary</label>
+                    <textarea id="course-summary" name="courseSummary" rows="5" required></textarea>
+                  </div>
+
+                  <div class="field-row">
+                    <div class="field-group">
+                      <label for="course-video-title">Featured lesson title</label>
+                      <input id="course-video-title" name="courseVideoTitle" type="text" required />
+                    </div>
+
+                    <div class="field-group">
+                      <label for="course-video-duration">Video length</label>
+                      <input id="course-video-duration" name="courseVideoDuration" type="text" required />
+                    </div>
+                  </div>
+
+                  <div class="field-group">
+                    <label for="course-video-url">Video link</label>
+                    <input id="course-video-url" name="courseVideoUrl" type="text" />
+                  </div>
+
+                  <div class="field-group">
+                    <label for="course-modules">Modules</label>
+                    <textarea id="course-modules" name="courseModules" rows="5" required></textarea>
+                  </div>
+
+                  <div class="field-group">
+                    <label for="course-transcript">Video transcript</label>
+                    <textarea id="course-transcript" name="courseTranscript" rows="7" required></textarea>
+                  </div>
+
+                  <div class="form-actions">
+                    <button class="button button-primary" id="publish-submit" type="submit">Save now</button>
+                    <button class="button button-ghost" id="reset-course-button" type="button">Clear fields</button>
+                  </div>
+                </form>
+              </article>
+
+              <article class="publish-card studio-preview-card">
+                <div class="studio-preview-top">
+                  <span class="course-badge" id="preview-badge">Core Track</span>
+                  <span class="course-status" id="preview-status">Ready to teach</span>
+                </div>
+                <h3 id="preview-title">Money Without Shame</h3>
+                <p id="preview-summary">
+                  A practical introduction to budgeting, debt, saving, banking, and financial confidence
+                  for people who were never taught how money works.
+                </p>
+
+                <div class="preview-progress">
+                  <div class="preview-progress-copy">
+                    <strong id="preview-progress-count">0 of 4 modules complete</strong>
+                    <span id="preview-progress-note">Click a module to mark it complete.</span>
+                  </div>
+                  <div class="progress-track" aria-hidden="true">
+                    <span id="preview-progress-bar"></span>
+                  </div>
+                </div>
+
+                <div class="video-preview">
+                  <div class="video-screen">
+                    <p class="video-kicker">Featured lesson video</p>
+                    <div class="video-play">Play lesson preview</div>
+                    <h4 id="preview-video-title">Lesson 1: A kinder way to talk about money</h4>
+                    <p id="preview-video-url">Video link can be added here when the lesson is published.</p>
+                  </div>
+
+                  <div class="video-meta">
+                    <span id="preview-video-duration">08:34</span>
+                    <a class="video-link is-disabled" id="preview-video-link" href="#" target="_blank" rel="noreferrer">
+                      Open video
+                    </a>
+                  </div>
+                </div>
+
+                <div class="studio-columns">
+                  <div class="studio-panel">
+                    <p class="studio-mini-label">Modules</p>
+                    <ol class="module-list" id="preview-modules">
+                      <li>Money stories and financial confidence</li>
+                      <li>Budgeting for real life</li>
+                      <li>Banking, fees, and safe money habits</li>
+                      <li>Debt repair and emergency savings</li>
+                    </ol>
+                  </div>
+
+                  <div class="studio-panel">
+                    <p class="studio-mini-label">Transcript</p>
+                    <pre class="transcript-preview" id="preview-transcript">[00:00] Welcome to Money Without Shame.
+[00:19] This lesson begins with the truth that people are not failures because they were never taught.
+[00:42] We will build a realistic budget and learn how to make choices without panic.</pre>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+          <noscript>
+            <p class="noscript-note">
+              The course studio uses JavaScript so teachers can edit course details, modules, video links,
+              and transcripts on the page.
+            </p>
+          </noscript>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div>
+          <strong>RFree Academy</strong>
+          <p>Free learning for real-world impact.</p>
+        </div>
+        <p>Built for access, dignity, and community-led opportunity.</p>
+        <p>&copy; <span id="year"></span> RFree Academy</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
